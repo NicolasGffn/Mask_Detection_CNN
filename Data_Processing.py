@@ -10,8 +10,8 @@ import pickle
 
 # On crée des données pour l'entraînement et pour le test du modèle :
 
-DIRECTORY_TRAIN = "C:\\Users\\nicol\\.spyder-py3\\Face Mask Dataset\\Train"
-DIRECTORY_TEST = "C:\\Users\\nicol\\.spyder-py3\\Face Mask Dataset\\Test"
+DIRECTORY_TRAIN = "XXX\\Face Mask Dataset\\Train"
+DIRECTORY_TEST = "XXX\\Face Mask Dataset\\Test"
 
 CATEGORIES = ['WithoutMask', 'WithMask', 'IncorrectlyWornMask']
 IMG_SIZE = 64 
