@@ -1,17 +1,10 @@
-from keras.models import Sequential
-from keras.layers import Conv2D, MaxPooling2D
-from keras.layers import Flatten, Dense, Dropout
-from keras.applications.vgg16 import VGG16
-import keras
-from sklearn.model_selection import train_test_split
 import numpy as np
 import os
 import cv2
 import pickle
-import tensorflow as tf
-from keras.applications.vgg16 import preprocess_input
-from tensorflow.keras.layers import Input
-import matplotlib.pyplot as plt
+
+
+
 
 
 DIRECTORY = "C:\\Users\\nicol\\.spyder-py3\\Face Mask Dataset\\Train"
@@ -50,9 +43,10 @@ data = np.array(X).flatten().reshape(SAMPLE_SIZE, IMG_SIZE*IMG_SIZE, 3) # pixel-
 X = np.array(X).reshape(-1, IMG_SIZE, IMG_SIZE, 3) # images
 y = np.array(y) # target
 
-# print("Features, X shape: ", X.shape)
-# print("Target, y shape: ", y.shape)
-# print("Data shape: ", data.shape)
+# Affichage de la taille des jeux de données
+print("Features, X shape: ", X.shape)
+print("Target, y shape: ", y.shape)
+print("Data shape: ", data.shape)
 
 
 
