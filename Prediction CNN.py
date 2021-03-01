@@ -6,9 +6,10 @@ import pickle
 import tensorflow as tf
 import sklearn
 import seaborn as sns
+import matplotlib.pyplot as plt
 
 
-CNN = tf.keras.models.load_model('Lien du CNN')
+CNN = tf.keras.models.load_model('C:\\Users\\nicol\\.spyder-py3\\CNN_perso.h5')
 
 # Chargement des données générées précedemment
 pickle_in = open("X1.pickle", "rb")
@@ -42,10 +43,10 @@ for k in range(len(E)) :
         e += 1
         
 print("Prédiction :")
-print("Nombre d'erreurs : ", e, "sur", len(y), ' ', "(" + str(round(e/len(E)*100, 3)) + "%" + ")")
+print("Nombre d'erreurs : ", e, "sur", len(y1), ' ', "(" + str(round(e/len(E)*100, 3)) + "%" + ")")
 
 
-cm = sklearn.metrics.confusion_matrix(y1, y_pred1)
+cm = sklearn.metrics.confusion_matrix(y2, y_pred1)
 plt.figure(figsize=(9, 9))
 sns.heatmap(cm, annot=True, fmt='.0f', square=True, linewidths=.5, cmap='Blues')
 plt.ylabel('Actual Label')
