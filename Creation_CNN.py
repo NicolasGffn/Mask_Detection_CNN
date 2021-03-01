@@ -19,15 +19,10 @@ import matplotlib.pyplot as plt
 # Une couche fully connected de classification
 
 
-# Il est donc préférable d'utiliser un modèle pré-construit et pré-entraîné, en réalisant du transfer-learning
+# Créer un CNN et l'entraîner totalement est trop coûteux en ressources et ne présente aucun intérêt
+# Le plus optimal est de partir d'un modèle modèle pré-construit et pré-entraîné, puis de réaliser du transfer-learning
 
-
-
-
-
-
-
-# On récupère un CNN déjà entraîné afin de réaliser du fine-tuning total.
+# On récupère un CNN déjà entraîné (ici VGG16) afin de réaliser du fine-tuning total pour l'adapter à notre problème.
 # Pour se faire, on enlève les couches fully connected du réseau (qui servent à classifier selon des catégories de base)
 # On crée ensuite les couches qui seront utilisées pour notre classification
 
@@ -40,11 +35,11 @@ for layer in model.layers:
    layer.trainable = False
 
 
-# Récupérer la sortie de ce réseau
+# On récupère la sortie de ce réseau
 output_vgg16_conv = model.output
 
 
-# Ajouter les npouvelles couches fully-connected pour la classification à 3 classes
+# On ajoute les nouvelles couches fully-connected pour la classification à 3 classes
 x = Flatten(name='flatten')(output_vgg16_conv)
 x = Dense(4096, activation='relu', name='fc1')(x)
 x = Dropout(0.3)(x)
@@ -53,10 +48,10 @@ x = Dropout(0.3)(x)
 x = Dense(3, activation='softmax')(x)
 
 
-# Définir le nouveau modèle
+# On définit le nouveau modèle
 CNN = keras.models.Model(inputs=model.input, outputs=x)
 
-# Compiler le modèle 
+# On compile le modèle 
 CNN.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 
