@@ -51,15 +51,13 @@ def create_data():
 
 create_data()
 
-SAMPLE_SIZE = len(y)
-SAMPLE_SIZE1 = len(y1)
 
 # Reshaping des données
 SAMPLE_SIZE_TRAIN = len(y)
-data = np.array(X).flatten().reshape(SAMPLE_SIZE, IMG_SIZE*IMG_SIZE, 3)
+data = np.array(X).flatten().reshape(SAMPLE_SIZE_TRAIN, IMG_SIZE*IMG_SIZE, 3)
 
 SAMPLE_SIZE_TEST = len(y1)
-data1 = np.array(X1).flatten().reshape(SAMPLE_SIZE1, IMG_SIZE*IMG_SIZE, 3)
+data1 = np.array(X1).flatten().reshape(SAMPLE_SIZE_TEST, IMG_SIZE*IMG_SIZE, 3)
 
 
 # Transformation de X et y en array
