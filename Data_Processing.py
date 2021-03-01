@@ -2,6 +2,7 @@ import numpy as np
 import os
 import cv2
 import pickle
+import seaborn as sns
 
 
 # On part d'un jeux de données organisés en dossiers d'images non labelisées
