@@ -3,7 +3,6 @@ from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Flatten, Dense, Dropout
 from keras.applications.vgg16 import VGG16
 import keras
-from sklearn.model_selection import train_test_split
 import numpy as np
 import os
 import cv2
