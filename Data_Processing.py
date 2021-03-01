@@ -4,13 +4,14 @@ import cv2
 import pickle
 
 
-
+# On part d'un jeux de données organisés en dossiers d'images non labelisées
+# Pour exploiter ce jeu de données, il faut associer un label à toutes les images de chaque sous-dossier
 
 
 DIRECTORY = "C:\\Users\\nicol\\.spyder-py3\\Face Mask Dataset\\Train"
 
 CATEGORIES = ['WithoutMask', 'WithMask', 'IncorrectlyWornMask']
-IMG_SIZE = 64 # IMG_SIZE = 224 alternative size
+IMG_SIZE = 64 
 
 
 
