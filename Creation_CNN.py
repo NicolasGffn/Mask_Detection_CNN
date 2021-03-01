@@ -12,11 +12,7 @@ from keras.applications.vgg16 import preprocess_input
 from tensorflow.keras.layers import Input
 import matplotlib.pyplot as plt
 
-# Création d'une architecture classique d'un CNN
-# 2 couches de convolution (avec fonction d'activation ReLU pour chacune d'elles) 
-# Une couche de pooling
-# 2 couches fully connected suivies d'une fonction ReLU pour chacune d'elles
-# Une couche fully connected de classification
+
 
 
 # Créer un CNN et l'entraîner totalement est trop coûteux en ressources et ne présente aucun intérêt
@@ -40,6 +36,10 @@ output_vgg16_conv = model.output
 
 
 # On ajoute les nouvelles couches fully-connected pour la classification à 3 classes
+# On réalise une architecture classique d'un CNN :
+# Une couche mise à plat en sortie de l'algorithme de base
+# 2 couches de convolution fully connected (avec fonction d'activation ReLU pour chacune d'elles) 
+# Une couche fully connected de classification
 x = Flatten(name='flatten')(output_vgg16_conv)
 x = Dense(4096, activation='relu', name='fc1')(x)
 x = Dropout(0.3)(x)
