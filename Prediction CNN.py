@@ -9,7 +9,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 
-CNN = tf.keras.models.load_model('C:\\Users\\nicol\\.spyder-py3\\CNN_perso.h5')
+CNN = tf.keras.models.load_model('XXX')
 
 # Chargement des données générées précedemment
 pickle_in = open("X1.pickle", "rb")
