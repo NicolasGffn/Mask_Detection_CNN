@@ -23,7 +23,7 @@ X = []
 X1 = []
 # Labels(0,1,2)
 y = []
-y1[]
+y1 = []
 
 def create_data():
     for category in CATEGORIES:
@@ -51,13 +51,15 @@ def create_data():
 
 create_data()
 
+SAMPLE_SIZE = len(y)
+SAMPLE_SIZE1 = len(y1)
 
 # Reshaping des données
 SAMPLE_SIZE_TRAIN = len(y)
-data = np.array(X).flatten().reshape(SAMPLE_SIZE, IMG_SIZE*IMG_SIZE, 3) # pixel-features
+data = np.array(X).flatten().reshape(SAMPLE_SIZE, IMG_SIZE*IMG_SIZE, 3)
 
 SAMPLE_SIZE_TEST = len(y1)
-data1 = np.array(X1).flatten().reshape(SAMPLE_SIZE, IMG_SIZE*IMG_SIZE, 3) # pixel-features
+data1 = np.array(X1).flatten().reshape(SAMPLE_SIZE1, IMG_SIZE*IMG_SIZE, 3)
 
 
 # Transformation de X et y en array
@@ -75,7 +77,7 @@ print("Format des données : ", data.shape)
 names = ['Without Mask', 'With Mask', 'Incorrectly Worn Mask'] 
 values = [(y == 0).sum(),(y == 1).sum(),(y == 2).sum()]
 graph = sns.barplot(x=names, y=values, palette=['red','green','yellow'])
-graph.set_title('Répartition des images du dataset d'entraînement')
+graph.set_title("Répartition des images du dataset d'entraînement")
 for k in range(3) :
     graph.text(k, 2500, values[k], fontsize=15, ha = 'center')
 
@@ -100,7 +102,3 @@ pickle_out.close()
 pickle_out = open("data1.pickle", "wb")
 pickle.dump(data1, pickle_out)
 pickle_out.close()
-
-
-
-
