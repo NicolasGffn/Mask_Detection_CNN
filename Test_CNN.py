@@ -9,6 +9,10 @@ from keras.layers import Flatten, Dense, Dropout
 import keras
 
 
+# Ce programme est destiné à évaluer si le CNN construit overfit, via cross validation
+# Le praramètre choisi pour évaluer l'overfitting est l'erreur quadratique moyenne
+# Pour des raisons de performances de ma machine, j'ai réalisé ce test avec 1500 données (le jeu de test)
+
 pickle_in = open("X1.pickle", "rb")
 X = pickle.load(pickle_in)
 pickle_in = open("y1.pickle", "rb")
