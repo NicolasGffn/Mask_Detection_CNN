@@ -21,6 +21,7 @@ IMG_SIZE = 64
 # Data
 X = []
 X1 = []
+
 # Labels(0,1,2)
 y = []
 y1 = []
