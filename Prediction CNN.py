@@ -4,6 +4,8 @@ import os
 import cv2
 import pickle
 import tensorflow as tf
+import sklearn
+import seaborn as sns
 
 
 CNN = tf.keras.models.load_model('Lien du CNN')
@@ -43,6 +45,13 @@ print("Prédiction :")
 print("Nombre d'erreurs : ", e, "sur", len(y), ' ', "(" + str(round(e/len(E)*100, 3)) + "%" + ")")
 
 
+cm = sklearn.metrics.confusion_matrix(y1, y_pred1)
+plt.figure(figsize=(9, 9))
+sns.heatmap(cm, annot=True, fmt='.0f', square=True, linewidths=.5, cmap='Blues')
+plt.ylabel('Actual Label')
+plt.xlabel('Predicted Label')
+plt.title('Matrice de Confusion')
+plt.show()
 
     
 # On peut aussi tester l'agorithme sur une image quelconque 
