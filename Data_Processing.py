@@ -70,11 +70,11 @@ print("Format de X : ", X.shape)
 print("Format de y : ", y.shape)
 print("Format des données : ", data.shape)
 
-# On affiche le diagramme de répartition des données
+# On affiche le diagramme de répartition des données (entraînement uniquement)
 names = ['Without Mask', 'With Mask', 'Incorrectly Worn Mask'] 
 values = [(y == 0).sum(),(y == 1).sum(),(y == 2).sum()]
 graph = sns.barplot(x=names, y=values, palette=['red','green','yellow'])
-graph.set_title('Répartition des images du dataset en fonction de leur classe')
+graph.set_title('Répartition des images du dataset d'entraînement')
 for k in range(3) :
     graph.text(k, 2500, values[k], fontsize=15, ha = 'center')
 
