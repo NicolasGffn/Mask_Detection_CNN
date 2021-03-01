@@ -19,8 +19,10 @@ IMG_SIZE = 64
 
 # Data
 X = []
+X1 = []
 # Labels(0,1,2)
 y = []
+y1[]
 
 def create_data():
     for category in CATEGORIES:
@@ -60,8 +62,8 @@ data1 = np.array(X1).flatten().reshape(SAMPLE_SIZE, IMG_SIZE*IMG_SIZE, 3) # pixe
 # Transformation de X et y en array
 X = np.array(X).reshape(-1, IMG_SIZE, IMG_SIZE, 3)
 y = np.array(y)
-X = np.array(X1).reshape(-1, IMG_SIZE, IMG_SIZE, 3)
-y = np.array(y1)
+X1 = np.array(X1).reshape(-1, IMG_SIZE, IMG_SIZE, 3)
+y1 = np.array(y1)
 
 # Affichage des formats des jeux de données
 print("Format de X : ", X.shape)
