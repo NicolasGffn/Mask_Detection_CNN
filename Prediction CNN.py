@@ -58,3 +58,5 @@ def test_image() :
         print("L'individu ne porte pas de masque")
     if y_pred == 1 :
         print("L'individu porte un masque")
+    if y_pred == 2 : 
+        print("Lindividu porte mal son masque")
