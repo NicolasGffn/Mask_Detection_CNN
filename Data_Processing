@@ -1,3 +1,10 @@
+DIRECTORY = "C:\\Users\\nicol\\.spyder-py3\\Face Mask Dataset\\Train"
+
+CATEGORIES = ['WithoutMask', 'WithMask', 'IncorrectlyWornMask']
+IMG_SIZE = 64 # IMG_SIZE = 224 alternative size
+
+
+
 # Data
 X = []
 # Labels(0,1,2)
@@ -19,17 +26,19 @@ def create_data():
 create_data()
 
 
-# Get images as a 4,096 feature set
+# Reshaping des données
 SAMPLE_SIZE = len(y)
 data = np.array(X).flatten().reshape(SAMPLE_SIZE, IMG_SIZE*IMG_SIZE, 3) # pixel-features
 
-# Turn X and y into numpy arrays
+# Transformation de X et y en array
 X = np.array(X).reshape(-1, IMG_SIZE, IMG_SIZE, 3) # images
 y = np.array(y) # target
 
 # print("Features, X shape: ", X.shape)
 # print("Target, y shape: ", y.shape)
 # print("Data shape: ", data.shape)
+
+
 
 
 # On enregistre les données pour ne pas avoir à les générer à chaque fois
@@ -44,5 +53,3 @@ pickle_out.close()
 pickle_out = open("data.pickle", "wb")
 pickle.dump(data, pickle_out)
 pickle_out.close()
-
-
