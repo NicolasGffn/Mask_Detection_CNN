@@ -59,7 +59,7 @@ CNN.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accurac
 
 
 
-# On charge les données générées
+# On charge les données d'entraînement générées
 pickle_in = open("X.pickle", "rb")
 X = pickle.load(pickle_in)
 pickle_in = open("y.pickle", "rb")
