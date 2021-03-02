@@ -55,7 +55,7 @@ plt.show()
     
 # On peut aussi tester l'agorithme sur une image quelconque 
 def test_image() :  
-    image = cv2.imread('C:\\Users\\nicol\\.spyder-py3\\IMG_4565.jpg')
+    image = cv2.imread('XXX.jpg')
     cv2.imshow('image', image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
