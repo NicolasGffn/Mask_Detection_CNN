@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 
 
-faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_alt2.xml')
+faceCascade = cv2.CascadeClassifier('XXX.xml')
 model = load_model('XXX.h5')
 
 WIDTH = 640
@@ -16,7 +16,7 @@ HEIGHT = 480
 video_capture = cv2.VideoCapture(0)
 
 # Enregistrement de la vidéo
-out = cv2.VideoWriter('detec_masque.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 5., (WIDTH,HEIGHT))
+out = cv2.VideoWriter('XXX.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 5., (WIDTH,HEIGHT))
 
 
 
@@ -42,11 +42,8 @@ while True:
         face_frame =  preprocess_input(face_frame)
         # faces_list.append(face_frame)
         faces_list = np.append(faces_list, face_frame, axis=0)
-        print(len(faces_list), " face(s)")
         if len(faces_list)>0:
-            print(len(faces_list), " face(s)")
             preds = model.predict(faces_list)
-            print('preds:', preds)
         for pred in preds:
             (withoutMask, mask, incorrectMask) = pred
             if mask > withoutMask and mask > incorrectMask :
