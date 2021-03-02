@@ -30,6 +30,7 @@ while True:
                                          minSize=(60, 60),
                                          flags=cv2.CASCADE_SCALE_IMAGE)    
     faces_list=[]
+    faces_list = np.array(faces_list).reshape(-1, 64, 64, 3)
     preds=[]
     
     for (x, y, w, h) in faces:
@@ -39,27 +40,29 @@ while True:
         face_frame = img_to_array(face_frame)
         face_frame = np.expand_dims(face_frame, axis=0)
         face_frame =  preprocess_input(face_frame)
-        faces_list.append(face_frame)
+        # faces_list.append(face_frame)
+        faces_list = np.append(faces_list, face_frame, axis=0)
         print(len(faces_list), " face(s)")
         if len(faces_list)>0:
+            print(len(faces_list), " face(s)")
             preds = model.predict(faces_list)
-            # print('preds:', preds)
+            print('preds:', preds)
         for pred in preds:
             (withoutMask, mask, incorrectMask) = pred
-        if mask > withoutMask and mask > incorrectMask :
-            label = "Mask"
-        elif withoutMask > mask and withoutMask > incorrectMask :
-            label = "NoMask"
-        elif incorrectMask > mask and incorrectMask > withoutMask :
-            label = "IncorrectMask"
-        if label == "Mask" :
-            color = (0, 255, 0) 
-        if label == "IncorrectMask" :
-            color = (0, 255, 255)
-        if label == "NoMask" :
-            color = (0, 0, 255)
-        label = "{}: {:.2f}%".format(label, max(withoutMask, mask, incorrectMask) * 100)
-        cv2.putText(frame, label, (x, y- 10),
+            if mask > withoutMask and mask > incorrectMask :
+                label = "Mask"
+            elif withoutMask > mask and withoutMask > incorrectMask :
+                label = "NoMask"
+            elif incorrectMask > mask and incorrectMask > withoutMask :
+                label = "IncorrectMask"
+            if label == "Mask" :
+                color = (0, 255, 0) 
+            if label == "IncorrectMask" :
+                color = (0, 255, 255)
+            if label == "NoMask" :
+                color = (0, 0, 255)
+            label = "{}: {:.2f}%".format(label, max(withoutMask, mask, incorrectMask) * 100)
+        cv2.putText(frame, label, (x, y - 10),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 2)
 
         cv2.rectangle(frame, (x, y), (x + w, y + h),color, 2)
