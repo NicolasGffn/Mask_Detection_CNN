@@ -6,5 +6,4 @@
   <img src="https://github.com/NicolasGffn/Mask_Detection_CNN/blob/main/CNN_Demo.gif" width=640 height=auto>
 </p>
 
-<Liens des ressources utiles :
-https://drive.google.com/drive/folders/18c8rMlIyCgYzdswj0zcMoF9CJxM3W2aW?usp=sharing>
+
