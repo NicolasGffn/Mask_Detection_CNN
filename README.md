@@ -3,7 +3,7 @@
 
 
 <p align="center">
-  <img src="https://github.com/NicolasGffn/Mask_Detection_CNN/blob/main/CNN_Demo.gif" width=400 height=auto>
+  <img src="https://github.com/NicolasGffn/Mask_Detection_CNN/blob/main/CNN_Demo.gif" width=600 height=auto>
 </p>
 
 Liens des ressources utiles :
