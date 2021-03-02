@@ -3,7 +3,7 @@
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Live Demo](https://github.com/NicolasGffn/Mask_Detection_CNN/blob/main/CNN_Demo.gif)
+![Live Demo](https://github.com/NicolasGffn/Mask_Detection_CNN/blob/main/CNN_DemO.gif)
 
 
 Liens des ressources utiles :
