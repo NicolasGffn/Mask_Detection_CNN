@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 
 faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_alt2.xml')
-model = load_model('C:\\Users\\nicol\\.spyder-py3\\CNN_perso.h5')
+model = load_model('XXX\\CNN_perso.h5')
 
 WIDTH = 640
 HEIGHT = 480
