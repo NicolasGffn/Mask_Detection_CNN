@@ -93,4 +93,4 @@ plt.show()
 
 
 # Sauvegarde du modèle entraîné
-CNN.save(Lien du fichier)
+CNN.save(XXX.h5)
