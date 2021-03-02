@@ -1,9 +1,9 @@
-<h1 align="right">CNN FOR MASK DETECTION</h1>
+<h1 align="center">CNN FOR MASK DETECTION</h1>
 
 
 
 
-<IMG align="center" src="https://github.com/NicolasGffn/Mask_Detection_CNN/blob/main/CNN_Demo.gif" width=400 height=auto>
+<IMG align="right" src="https://github.com/NicolasGffn/Mask_Detection_CNN/blob/main/CNN_Demo.gif" width=400 height=auto>
 
 
 
