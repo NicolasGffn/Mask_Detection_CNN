@@ -1,4 +1,4 @@
-<h1 align="center">CNN FOR MASK DETECTION</h1>
+<h1 align="center">DETECTION DU PORT DU MASQUE</h1>
 
 
 
